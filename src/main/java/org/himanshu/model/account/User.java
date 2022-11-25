@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class User {
+public class User extends Account {
     private LicenseInfo licenseInfo;
 }

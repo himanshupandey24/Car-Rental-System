@@ -34,11 +34,11 @@ class OnDemandTowing{
 }
 class WiFi{
 }
-Chauffeur <|-- AddonService
-DeepCleaning <|-- AddonService
-Insurance <|-- AddonService
-OnDemandTowing <|-- AddonService
-WiFi <|-- AddonService
+Chauffeur --|> AddonService
+DeepCleaning --|> AddonService
+Insurance --|> AddonService
+OnDemandTowing --|> AddonService
+WiFi --|> AddonService
 
 abstract class VehicleAddon {
 -String id;
@@ -52,9 +52,9 @@ class Navigation{
 }
 class PassengerScreen{
 }
-ChildSeat <|-- VehicleAddon
-Navigation <|-- VehicleAddon
-PassengerScreen <|-- VehicleAddon
+ChildSeat --|> VehicleAddon
+Navigation --|> VehicleAddon
+PassengerScreen --|> VehicleAddon
 
 class RentalLocation {
 String id;
@@ -125,7 +125,7 @@ class VehicleReservation {
 -Address dropLocation;
 -double startMileage;
 -double endMileage;
--e HireableVehicle vehicle;
+-HireableVehicle vehicle;
 -String accocatedVehicleId;
 -VehicleType vehicleType;
 -String invoiceId;

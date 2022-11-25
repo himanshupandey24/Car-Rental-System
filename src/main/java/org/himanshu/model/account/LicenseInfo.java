@@ -16,5 +16,4 @@ public class LicenseInfo {
     private String issuedAtState;
     private String issuedInCountry;
     private LicenseType licenseType;
-
 }

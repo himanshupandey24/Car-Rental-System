@@ -13,6 +13,9 @@ public abstract class HireableVehicle {
     private String make;
     private String model;
     private int yearOfManufacture;
+    private double meterReading;
+    private double fuelCapacity;
+    private double currentFuelMeasurement;
     private double mileage;
     private int numberOfSeats;
     private VehicleCategory vehicleCategory;

@@ -34,9 +34,9 @@ class PersonalInfo {
    -String initials;
    -String dob;
 }
-Admin <|-- Account
-User <|-- Account
-Driver <|-- Account
+Admin --|> Account
+User --|> Account
+Driver --|> Account
 Account *-- Contact
 Contact *-- Address
 Contact *-- PersonalInfo

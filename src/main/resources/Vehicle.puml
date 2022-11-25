@@ -16,9 +16,9 @@ abstract class HireableVehicle {
     - Coordinates currentLocation;
 }
 
-Car <|--HireableVehicle
-Van <|-- HireableVehicle
-Bike <|-- HireableVehicle
+Car --|> HireableVehicle
+Van --|> HireableVehicle
+Bike --|> HireableVehicle
 
 HireableVehicle *-- VehicleLocation
 VehicleLocation *-- Coordinates
