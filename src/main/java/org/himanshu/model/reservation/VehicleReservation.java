@@ -1,11 +1,15 @@
 package org.himanshu.model.reservation;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.himanshu.model.common.Address;
 import org.himanshu.model.vehicle.VehicleType;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
 public class VehicleReservation {
     private String reservationId;
     private String usrId;
@@ -24,7 +28,5 @@ public class VehicleReservation {
     private List<VehicleAddOn> vehicleAddOns;
     private List<AddonService> addonServices;
     private VehicleReservationType vehicleReservationType;
-
-
 
 }
