@@ -9,5 +9,5 @@ public interface VehicleService {
     HireableVehicle getVehicleById(String id);
     HireableVehicle getVehicleByQrCode(String qrCode);
     void updateQrCode(String vehicleId, String qrCode) throws VehicleNotExitsException;
-    void removeVehicle(String vehicleID) throws VehicleNotExitsException;
+    void removeVehicle(String vehicleId) throws VehicleNotExitsException;
 }
