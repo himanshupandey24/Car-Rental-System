@@ -28,19 +28,44 @@ public class UserRepository implements AccountRepository{
 
     @Override
     public void resetPassword(String userId, String password) throws AccountDoesNotExistsException {
-        if(userRegister.get(userId) ==null)
+        if(userRegister.get(userId) == null)
             throw new AccountDoesNotExistsException("Account does not exist");
 
         userRegister.get(userId).setPassword(password);
     }
 
     public List<HireableVehicle> getHiredVehicles(String userId){
-        List<VehicleReservation> vehicleReservationList = VehicleReservationRepository.vehicleReservations
-                .stream().filter(vehicleReservation -> vehicleReservation.getUsrId().equalsIgnoreCase(userId))
+
+        List<VehicleReservation> vehicleReservationList =
+                VehicleReservationRepository.vehicleReservations
+                .stream()
+                .filter(vehicleReservation -> vehicleReservation.getUsrId().equalsIgnoreCase(userId))
                 .collect(Collectors.toList());
 
-        return vehicleReservationList.stream().map(vehicleReservation -> HireableVehicleRepository.vehicleRegister
-                .get(vehicleReservation.getAllocatedVehicleId())).collect(Collectors.toList());
+        return vehicleReservationList
+                .stream()
+                .map(vehicleReservation ->
+                        HireableVehicleRepository
+                                .vehicleRegister.get(vehicleReservation.getAllocatedVehicleId()))
+                .collect(Collectors.toList());
+    }
+
+    public List<HireableVehicle> getHiredVehicle(String userId, LocalDateTime startDate, LocalDateTime endDate){
+        List<VehicleReservation> vehicleReservationList =
+                VehicleReservationRepository.vehicleReservations.stream()
+                        .filter(vehicleReservation -> vehicleReservation.getUsrId().equalsIgnoreCase(userId) &&
+                                    (vehicleReservation.getDueDate() != null &&
+                                            startDate.isBefore(vehicleReservation.getDueDate())) &&
+                                    (vehicleReservation.getFromDate() != null &&
+                                            endDate.isAfter(vehicleReservation.getFromDate()))
+                        )
+                        .collect(Collectors.toList());
+
+        return vehicleReservationList.stream()
+                .map(vehicleReservation ->
+                        HireableVehicleRepository.vehicleRegister
+                                .get(vehicleReservation.getAllocatedVehicleId()))
+                .collect(Collectors.toList());
     }
  
 
