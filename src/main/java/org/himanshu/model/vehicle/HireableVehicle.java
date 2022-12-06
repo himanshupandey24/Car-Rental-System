@@ -21,5 +21,6 @@ public abstract class HireableVehicle {
     private VehicleCategory vehicleCategory;
     private VehicleType vehicleType;
     private Location parkedLocation;
+    private VehicleStatus vehicleStatus;
     private Coordinates currentLocation;
 }
