@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class Address {
+public class Address {
     private String addressLine1;
     private String addressLine2;
     private String addressLine3;

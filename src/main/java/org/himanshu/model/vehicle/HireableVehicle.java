@@ -20,7 +20,7 @@ public abstract class HireableVehicle {
     private int numberOfSeats;
     private VehicleCategory vehicleCategory;
     private VehicleType vehicleType;
-    private Location parkedLocation;
+    private VehicleLocation parkedLocation;
     private VehicleStatus vehicleStatus;
     private Coordinates currentLocation;
 }
