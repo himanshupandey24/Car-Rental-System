@@ -1,5 +1,7 @@
 package org.himanshu.service;
 
+import org.himanshu.model.reservation.InvoiceNotification;
+
 public interface InvoiceNotificationService {
-    void notifyUser(InvoiceNotificationService invoiceNotificationService);
+    void notifyUser(InvoiceNotification invoiceNotification);
 }
